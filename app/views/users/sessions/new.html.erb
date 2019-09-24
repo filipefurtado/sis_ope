@@ -1,38 +1,26 @@
-<div id="background-menu">
-  <div id="left-text">
-    <div id="box-text">
-      <div id="welcome-message1">Bem-vindo!</div>
-      <div id="welcome-message2">Você está no banco de currículos da Synergia.</div>
-      <div id="welcome-message2">Faça seu login para acessar.</div>
-    </div>
+<h2>Log in</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
-  <div id="right-menu">
-    <div id="menu-items">
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name),:class=>"login-menu") do |f| %>
-      <img id="logo-1" src="/img/topo-logo-synergia.png">
-      <img id="logo-2" src="/img/rodape-logo-tpf.png">
 
-      <div id="email-label"><%= f.label :email %><br /></div>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", :id=>"email-input" %>
-
-      <div id="senha-label"><%= f.label :password %><br /></div>
-      <%= f.password_field :password, autocomplete: "current-password", :id=>"senha-input" %>
-
-      <% if devise_mapping.rememberable? %>
-      <div id="div-checkbox">
-        <%= f.check_box :remember_me, :id=>"remember-checkbox", :type=>"checkbox" %>
-        <label for="remember-checkbox" id="remember-checkbox">Lembrar dados</label>
-      </div>
-      <% end %>
-
-      <%= f.submit "Log in", :id=>"acessar-button" %>
-      <button id="primeiro-acesso-button">Meu primeiro acesso</button>
-
-      <% end %>
-
-      <%= render "users/shared/links" %>
-
-
-    </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
-</div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "Log in" %>
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>
