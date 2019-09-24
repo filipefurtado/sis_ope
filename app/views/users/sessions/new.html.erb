@@ -32,7 +32,7 @@
       <% end %>
       
       <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-        <%= button_to "Meu primeiro acesso", new_registration_path(resource_name), :id=>"primeiro-acesso-button" %>
+        <%= button_to "Meu primeiro acesso", new_registration_path(resource_name), :id=>"primeiro-acesso-button", :method=>"get" %>
       <% end %>
       <!-- <button id="primeiro-acesso-button">Meu primeiro acesso</button> -->
 
