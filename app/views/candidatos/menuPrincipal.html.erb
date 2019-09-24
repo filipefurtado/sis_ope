@@ -1,3 +1,4 @@
+<div id="body">
 <p id="notice"><%= notice %></p>
 <%= current_user.email%>
 <ul>
@@ -14,7 +15,7 @@
     <div class="left-menu">
         <div id="button-1">
             <img id="img-button-1" src="/img/new-curriculum.png">
-            <button id="new-curriculum-button" type="submit">Cadastrar Dados</button>
+            <%= button_to "Cadastrar Currículo", action: "new", id: "new-curriculum-button"  %>
         </div>
         <div id="button-2">
             <img id="img-button-2" src="/img/edit-curriculum.png">
@@ -36,3 +37,4 @@
         </div>
     </div>
 </form>
+<div id="body">
