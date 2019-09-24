@@ -1,23 +1,22 @@
-<p id="notice"><%= notice %></p>
-<%= current_user.email%>
-<ul>
-  <li><%= link_to "Sair", destroy_user_session_path, method: :delete%></li>
-</ul>
 
 <div class="navbar">
     <img id="nav-logo" src="/img/topo-logo-synergia.png">
     <div id="nav-title">Banco de Dados de Currículos</div>
 </div>
-<div class="middle-bar"></div>
-<form class="main-menu" action="/candidatos/new">
+<div class="middle-bar"><%= current_user.email%> | <%= link_to "Sair", destroy_user_session_path, method: :delete%></div>
+<div class="main-menu">
     <div class="left-menu">
         <div id="button-1">
-            <img id="img-button-1" src="/img/new-curriculum.png">
-            <button id="new-curriculum-button" type="submit">Cadastrar Dados</button>
+            <form action="/candidatos/new">
+                <img id="img-button-1" src="/img/new-curriculum.png">
+                <button id="new-curriculum-button" type="submit">Cadastrar Dados</button>
+            </form>
         </div>
         <div id="button-2">
-            <img id="img-button-2" src="/img/edit-curriculum.png">
-            <button id="edit-curriculum-button" type="submit">Alterar Dados</button>
+            <form action="/candidatos/:id">
+                <img id="img-button-2" src="/img/edit-curriculum.png">
+                <button id="edit-curriculum-button" type="submit">Alterar Dados</button>
+            </form>
         </div>
     </div>
     <div class="right-menu">
@@ -34,4 +33,4 @@
             <img id="candidate-img" src="/img/candidate-img.png">
         </div>
     </div>
-</form>
+</div>
