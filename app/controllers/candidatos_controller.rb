@@ -4,7 +4,7 @@ class CandidatosController < ApplicationController
   # GET /candidatos
   # GET /candidatos.json
   def index
-    render "menuPrincipal"
+    render "candidatos/menu/mainMenu"
   end
 
   # GET /candidatos/1
